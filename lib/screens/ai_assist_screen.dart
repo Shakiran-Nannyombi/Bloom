@@ -5,6 +5,7 @@ import '../l10n/bloom_strings.dart';
 import '../state/app_state.dart';
 import '../theme/bloom_colors.dart';
 import '../widgets/bloom_ui.dart';
+import '../widgets/layout.dart';
 
 class AiAssistScreen extends StatefulWidget {
   const AiAssistScreen({super.key});
@@ -60,12 +61,12 @@ class _AiAssistScreenState extends State<AiAssistScreen> {
             'Is it rude if she says no to a hug?',
           ];
 
-    return SafeArea(
-      child: BloomScopeWidth(
-        child: Column(
-          children: [
+    return BloomPage(
+      fill: true,
+      child: Column(
+        children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 16, 20, 8),
+              padding: const EdgeInsets.only(bottom: 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -78,7 +79,6 @@ class _AiAssistScreenState extends State<AiAssistScreen> {
             Expanded(
               child: state.aiMessages.isEmpty
                   ? ListView(
-                      padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
                       children: [
                         Text(
                           s.suggested,
@@ -100,7 +100,7 @@ class _AiAssistScreenState extends State<AiAssistScreen> {
                     )
                   : ListView.builder(
                       controller: _scroll,
-                      padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
+                      padding: const EdgeInsets.only(bottom: 8),
                       itemCount: state.aiMessages.length,
                       itemBuilder: (context, i) {
                         final m = state.aiMessages[i];
@@ -141,7 +141,7 @@ class _AiAssistScreenState extends State<AiAssistScreen> {
                     ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 8, 20, 16),
+              padding: const EdgeInsets.only(top: 8),
               child: TextField(
                 controller: _input,
                 textInputAction: TextInputAction.send,
@@ -157,7 +157,6 @@ class _AiAssistScreenState extends State<AiAssistScreen> {
             ),
           ],
         ),
-      ),
     );
   }
 }

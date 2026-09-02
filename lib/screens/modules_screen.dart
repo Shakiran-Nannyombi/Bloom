@@ -6,6 +6,7 @@ import '../l10n/bloom_strings.dart';
 import '../state/app_state.dart';
 import '../theme/bloom_colors.dart';
 import '../widgets/bloom_ui.dart';
+import '../widgets/layout.dart';
 
 class ModulesScreen extends StatelessWidget {
   const ModulesScreen({super.key});
@@ -15,12 +16,10 @@ class ModulesScreen extends StatelessWidget {
     final state = BloomScope.of(context);
     final s = BloomStrings(state.language);
 
-    return SafeArea(
-      child: BloomScopeWidth(
-        child: ListView(
-          padding: const EdgeInsets.fromLTRB(20, 16, 20, 32),
-          children: [
-            Text(s.modules, style: Theme.of(context).textTheme.displayMedium),
+    return BloomPage(
+      child: ListView(
+        children: [
+          Text(s.modules, style: Theme.of(context).textTheme.displayMedium),
             const SizedBox(height: 8),
             Text(
               state.isTeacher ? s.modulesIntroTeacher : s.modulesIntroParent,
@@ -54,7 +53,7 @@ class ModulesScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 12),
                     LinearProgressIndicator(
-                      value: module.progress / 100,
+                      value: state.percentFor(module.id, module.totalSteps) / 100,
                       minHeight: 6,
                       borderRadius: BorderRadius.circular(99),
                       color: BloomColors.primary,
@@ -62,7 +61,7 @@ class ModulesScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      s.percentComplete(module.progress),
+                      s.percentComplete(state.percentFor(module.id, module.totalSteps)),
                       style: Theme.of(context).textTheme.labelSmall,
                     ),
                   ],
@@ -70,8 +69,7 @@ class ModulesScreen extends StatelessWidget {
               ),
               const SizedBox(height: 12),
             ],
-          ],
-        ),
+        ],
       ),
     );
   }

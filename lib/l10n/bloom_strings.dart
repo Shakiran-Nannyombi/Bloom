@@ -49,6 +49,25 @@ class BloomStrings {
   String get startConversation => _lg ? 'Tandika okwogera' : 'Start Conversation';
 
   String get home => _lg ? 'Awaka' : 'Home';
+  String get dashboard => _lg ? 'Dashibodi' : 'Dashboard';
+  String get overview => _lg
+      ? 'Laba enteekateeka yo eya leero n\'ebyokukola.'
+      : 'Your teaching and guidance workspace for today.';
+  String get parentOverview => _lg
+      ? 'Yiga, tandika okwogera, era weewereze obuyambi.'
+      : 'Learn first, then start the conversation at home.';
+  String get lastSyncedAgo =>
+      _lg ? 'Byakakuumibwa kaakati' : 'Offline cache ready · just synced';
+  String get activity => _lg ? 'Ebikolebwa' : 'Activity';
+  String get noActivity => _lg ? 'Tewali kyewereza wadde alipoota.' : 'No referrals or reports yet.';
+  String get copied => _lg ? 'Kikopeddwa' : 'Copied to clipboard';
+  String get copy => _lg ? 'Koppa' : 'Copy';
+  String get continueSession => _lg ? 'Genda mu ssomo' : 'Open session';
+  String get openLearn => _lg ? 'Yiga essomo' : 'Open module';
+  String get viewHelpline => _lg ? 'Laba essimu 116' : 'Keep 116 visible';
+  String get savedReports => _lg ? 'Alipoota ezikuumiddwa' : 'Saved private notes';
+  String get savedReferrals => _lg ? 'Abakulu abeweerezeddwa' : 'Mentor referrals sent';
+  String get syncing => _lg ? 'Kikuumibwa...' : 'Syncing offline cache...';
   String get modules => _lg ? 'Emisomo' : 'Modules';
   String get aiAssist => _lg ? 'AI' : 'AI Assist';
   String get settings => _lg ? 'Enteekateeka' : 'Settings';

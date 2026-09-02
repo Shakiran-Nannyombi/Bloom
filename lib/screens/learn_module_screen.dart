@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
 import '../data/content.dart';
@@ -41,15 +42,17 @@ class _LearnModuleScreenState extends State<LearnModuleScreen>
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => context.pop(),
-        ),
-        title: Text(
-          module.title.of(state.language),
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                color: BloomColors.primary,
+        titleSpacing: 8,
+        title: Row(
+          children: [
+            const SizedBox(width: 0),
+            Expanded(
+              child: Text(
+                module.title.of(state.language),
+                overflow: TextOverflow.ellipsis,
               ),
+            ),
+          ],
         ),
         actions: [
           IconButton(
@@ -119,17 +122,26 @@ class _LearnModuleScreenState extends State<LearnModuleScreen>
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
-              child: BloomPrimaryButton(
-                label: reviewed ? s.markedReviewed : s.markReviewed,
-                icon: Icons.check_circle,
-                onPressed: reviewed
-                    ? () => context.push('/session/${module.id}')
-                    : () {
-                        state.markReviewed(module.id);
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(s.markedReviewed)),
-                        );
+              child: Row(
+                children: [
+                  Expanded(
+                    child: BloomPrimaryButton(
+                      expand: true,
+                      label: reviewed ? s.continueSession : s.markReviewed,
+                      icon: reviewed ? Icons.play_arrow : Icons.check_circle,
+                      onPressed: () {
+                        if (!reviewed) {
+                          state.markReviewed(module.id);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text(s.markedReviewed)),
+                          );
+                        } else {
+                          context.push('/session/${module.id}');
+                        }
                       },
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -246,12 +258,33 @@ class _StartersTab extends StatelessWidget {
       children: [
         for (final line in module.starters) ...[
           BloomCard(
-            child: Text(
-              line.of(language),
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: BloomColors.primary,
-                    fontStyle: FontStyle.italic,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  line.of(language),
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: BloomColors.primary,
+                        fontStyle: FontStyle.italic,
+                      ),
+                ),
+                const SizedBox(height: 8),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton.icon(
+                    onPressed: () async {
+                      await Clipboard.setData(ClipboardData(text: line.of(language)));
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(BloomStrings(language).copied)),
+                        );
+                      }
+                    },
+                    icon: const Icon(Icons.copy, size: 16),
+                    label: Text(BloomStrings(language).copy),
                   ),
+                ),
+              ],
             ),
           ),
           const SizedBox(height: 12),

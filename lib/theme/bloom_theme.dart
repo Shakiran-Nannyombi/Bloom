@@ -96,9 +96,10 @@ abstract final class BloomTheme {
         style: FilledButton.styleFrom(
           backgroundColor: BloomColors.primary,
           foregroundColor: BloomColors.onPrimary,
-          minimumSize: const Size.fromHeight(48),
+          minimumSize: const Size(88, 48),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(14),
           ),
           textStyle: GoogleFonts.beVietnamPro(
             fontWeight: FontWeight.w600,

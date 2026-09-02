@@ -6,6 +6,7 @@ import '../l10n/bloom_strings.dart';
 import '../state/app_state.dart';
 import '../theme/bloom_colors.dart';
 import '../widgets/bloom_ui.dart';
+import '../widgets/layout.dart';
 
 class ReferMentorScreen extends StatelessWidget {
   const ReferMentorScreen({super.key});
@@ -15,17 +16,10 @@ class ReferMentorScreen extends StatelessWidget {
     final state = BloomScope.of(context);
     final s = BloomStrings(state.language);
 
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => context.pop(),
-        ),
-        title: Text(s.referMentor),
-      ),
-      body: BloomScopeWidth(
+    return SubpageScaffold(
+      title: s.referMentor,
+      body: BloomPage(
         child: ListView(
-          padding: const EdgeInsets.fromLTRB(20, 16, 20, 32),
           children: [
             Text(s.mentorsTitle, style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 8),
@@ -48,6 +42,10 @@ class ReferMentorScreen extends StatelessWidget {
                       alignment: Alignment.centerRight,
                       child: FilledButton(
                         onPressed: () {
+                          state.addReferral(
+                            mentor.name,
+                            mentor.focus.of(state.language),
+                          );
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text(s.connected)),
                           );
@@ -88,17 +86,10 @@ class _ReportConcernScreenState extends State<ReportConcernScreen> {
     final state = BloomScope.of(context);
     final s = BloomStrings(state.language);
 
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => context.pop(),
-        ),
-        title: Text(s.reportConcern),
-      ),
-      body: BloomScopeWidth(
+    return SubpageScaffold(
+      title: s.reportConcern,
+      body: BloomPage(
         child: ListView(
-          padding: const EdgeInsets.fromLTRB(20, 16, 20, 32),
           children: [
             Text(s.reportTitle, style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 8),
@@ -137,10 +128,13 @@ class _ReportConcernScreenState extends State<ReportConcernScreen> {
             BloomPrimaryButton(
               label: s.submitReport,
               onPressed: () {
+                final note = _note.text.trim();
+                if (note.isEmpty) return;
+                state.addReport(note);
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text(s.reportSent)),
                 );
-                context.pop();
+                context.go('/settings');
               },
             ),
           ],

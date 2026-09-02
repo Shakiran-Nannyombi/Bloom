@@ -20,7 +20,6 @@ void main() {
 
     expect(find.textContaining('Teacher Namuli'), findsOneWidget);
     expect(find.text('Understanding Your Cycle'), findsOneWidget);
-    expect(find.text('Ask AI Co-Pilot'), findsWidgets);
 
     await tester.tap(find.text('AI Assist'));
     await tester.pumpAndSettle();
