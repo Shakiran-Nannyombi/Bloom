@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Active Session View with AI Co-Pilot</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Noto+Serif:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#884d5e",
+                    "surface-container-low": "#fdf1f2",
+                    "outline-variant": "#d5c2c6",
+                    "surface-tint": "#864e60",
+                    "on-tertiary-fixed-variant": "#2a4f2b",
+                    "secondary-container": "#fdb2c5",
+                    "outline": "#837377",
+                    "secondary-fixed-dim": "#fdb2c5",
+                    "tertiary": "#052b0b",
+                    "primary": "#411525",
+                    "inverse-on-surface": "#faeeef",
+                    "on-primary-container": "#d491a5",
+                    "primary-container": "#5b2a3b",
+                    "on-tertiary-container": "#85ad82",
+                    "primary-fixed-dim": "#fab3c7",
+                    "surface-container": "#f7ebec",
+                    "on-surface": "#201a1b",
+                    "on-primary-fixed-variant": "#6a3748",
+                    "on-secondary-fixed": "#370b1b",
+                    "inverse-surface": "#352f30",
+                    "surface-container-highest": "#ebe0e1",
+                    "tertiary-fixed-dim": "#a7d1a3",
+                    "on-background": "#201a1b",
+                    "on-tertiary-fixed": "#002105",
+                    "on-surface-variant": "#514347",
+                    "on-secondary-container": "#7a4152",
+                    "tertiary-container": "#1d411f",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#360c1d",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#ebe0e1",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#6c3646",
+                    "background": "#fff8f8",
+                    "inverse-primary": "#fab3c7",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#c3eebd",
+                    "surface-dim": "#e3d7d9",
+                    "on-error": "#ffffff",
+                    "surface": "#fff8f8",
+                    "primary-fixed": "#ffd9e2",
+                    "surface-bright": "#fff8f8",
+                    "surface-container-high": "#f1e5e7",
+                    "secondary-fixed": "#ffd9e1",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-margin": "20px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "unit": "4px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "gutter": "12px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "label-md": [
+                            "Be Vietnam Pro"
+                    ],
+                    "body-sm": [
+                            "Be Vietnam Pro"
+                    ],
+                    "display-lg": [
+                            "Noto Serif"
+                    ],
+                    "body-md": [
+                            "Be Vietnam Pro"
+                    ],
+                    "display-lg-mobile": [
+                            "Noto Serif"
+                    ],
+                    "headline-md": [
+                            "Noto Serif"
+                    ],
+                    "body-lg": [
+                            "Be Vietnam Pro"
+                    ],
+                    "headline-sm": [
+                            "Noto Serif"
+                    ],
+                    "label-sm": [
+                            "Be Vietnam Pro"
+                    ]
+            },
+            "fontSize": {
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "36px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "34px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased flex flex-col h-screen overflow-hidden">
+<!-- Top App Bar -->
+<header class="w-full sticky top-0 z-50 bg-surface shadow-sm shadow-primary/5">
+<div class="flex justify-between items-center px-container-margin py-md w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-sm">
+<button class="p-2 -ml-2 text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div>
+<h1 class="font-headline-sm text-headline-sm-mobile text-primary font-bold">Introduction to Phonics</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Primary 1 English</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors active:scale-95 duration-150 rounded-full">
+<span class="material-symbols-outlined" data-icon="sync">sync</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A small, circular avatar portrait of a smiling female Ugandan teacher in a bright yellow blouse, standing against a blurred classroom background. The lighting is soft and natural, creating a warm and approachable aesthetic. The image is cropped tightly to her face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr-VTjulKVAqtIEBnMgewD1xktDjcGzYlDkFHjAvfAnC3fSptOrP-rloHPqP9xN1l-1e1lEmitPUXmCyDkVe3-YLkbjJ07yEeHGYcQF2e04xossixsbsZIx0_V0n-fPG0sXuGgAtkqE3bizq8MtIzcCW4wh-KaIVfuAFc4JehIpMlKQEipwX78Uf8FDcYh_iyEdhXsi7qXE7BYjGmuDWW2WQh4F4xCu3ZgAkm2dXyVh9cxDh8yNq4u"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto px-container-margin py-lg pb-32">
+<div class="max-w-3xl mx-auto flex flex-col gap-lg">
+<!-- Progress / Step Indicator -->
+<div class="flex items-center justify-between bg-surface-container-low rounded-lg p-sm border border-outline-variant/30">
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined" data-icon="record_voice_over" style="font-variation-settings: 'FILL' 1;">record_voice_over</span>
+<span class="font-label-md text-label-md">Talking Point 1 of 5</span>
+</div>
+<div class="flex gap-1">
+<div class="w-8 h-1.5 bg-primary rounded-full"></div>
+<div class="w-8 h-1.5 bg-surface-variant rounded-full"></div>
+<div class="w-8 h-1.5 bg-surface-variant rounded-full"></div>
+<div class="w-8 h-1.5 bg-surface-variant rounded-full"></div>
+<div class="w-8 h-1.5 bg-surface-variant rounded-full"></div>
+</div>
+</div>
+<!-- Content Area -->
+<article class="bg-surface rounded-xl p-md border border-outline-variant/20 shadow-sm shadow-primary/5 flex flex-col gap-md relative">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary font-bold">The Sounds of 'A'</h2>
+<div class="flex flex-col gap-sm">
+<p class="font-body-md text-body-md text-on-surface">
+                        Start by writing the capital letter 'A' and lowercase 'a' on the chalkboard. Point to them clearly.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface">
+                        Say: "Today we are learning the sound this letter makes. It says /a/ as in Apple."
+                    </p>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-lg border-l-4 border-secondary mt-2">
+<h3 class="font-label-md text-label-md text-secondary mb-1 flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm" data-icon="tips_and_updates">tips_and_updates</span> Teacher Tip
+                    </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Ensure students are watching your mouth as you pronounce the sound. Have them repeat it together 3 times.
+                    </p>
+</div>
+<!-- Decorative Image relevant to the lesson -->
+<div class="w-full h-48 rounded-lg mt-sm overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover absolute inset-0" data-alt="A close-up view of a rustic, wooden chalkboard standing outdoors in a rural school setting. Written clearly on the board in crisp, white chalk are the letters 'A' and 'a', next to a simple, hand-drawn outline of an apple. The background shows soft, blurred green foliage and warm, dappled sunlight, creating an inviting educational atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzsJJ-McFuB64U_N35ErE0c2gYPNUIEBbi1y42pytUn_jBO4P6-yHZBSDEmS9LjjmRkXGT5gYtClhvpqudh0wJTRzuzO0giKO6a6_AS9WvYNYGzofBRjo2i-RfiFL7118lUPFGa72ToPdMFz5LTsgJUCOGVUVeyYXWnrYwenxVDPI-UhpUxM8v04bOPSCA8_yQscn4fMEzqyDdAu90dRyOhmwyMr5B1NcKyiribcX7XswoEfIkviuv"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent flex items-end p-sm">
+<span class="font-label-sm text-label-sm text-on-primary">Visual Aid Reference</span>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Navigation Controls (Sticky above the Co-Pilot Drawer) -->
+<div class="fixed bottom-24 left-0 w-full px-container-margin z-40 pb-safe">
+<div class="max-w-3xl mx-auto flex justify-between items-center bg-surface/90 backdrop-blur-sm p-sm rounded-full shadow-sm border border-outline-variant/30">
+<button class="flex items-center gap-2 px-md py-3 text-on-surface-variant hover:text-primary transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined" data-icon="arrow_back_ios">arrow_back_ios</span>
+<span class="font-label-md text-label-md hidden sm:inline">Previous Point</span>
+</button>
+<button class="flex items-center justify-center w-12 h-12 bg-surface-container-highest rounded-full text-primary hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+</button>
+<button class="flex items-center gap-2 px-md py-3 bg-primary text-on-primary rounded-full hover:bg-primary-container transition-colors shadow-sm">
+<span class="font-label-md text-label-md hidden sm:inline">Next Point</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward_ios">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+<!-- Bottom Drawer Overlay: AI Co-Pilot -->
+<!-- Simulating the drawer peeking or fully expanded based on state. Here it's partially expanded. -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest rounded-t-[24px] shadow-[0_-8px_24px_rgba(65,21,37,0.08)] border-t border-outline-variant/20 transition-transform duration-300 transform translate-y-0 pb-safe">
+<!-- Drag Handle -->
+<div class="w-full flex justify-center pt-3 pb-1 cursor-grab">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full opacity-50"></div>
+</div>
+<div class="px-container-margin pb-md max-w-3xl mx-auto flex flex-col gap-sm">
+<!-- Compact Output Box / Context -->
+<div class="flex items-start gap-sm bg-surface-container-low p-sm rounded-lg border border-primary/10">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="flex-1">
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>AI Co-Pilot:</strong> I can help you adjust this explanation. Try asking: "How do I explain this in the local language?" or "Give me another example."
+                    </p>
+</div>
+</div>
+<!-- Input Field -->
+<div class="relative w-full">
+<input class="w-full bg-surface border border-outline-variant rounded-full py-3 pl-4 pr-12 font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Ask for teaching tips..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-primary text-on-primary rounded-full hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

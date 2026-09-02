@@ -1,30 +1,34 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:bloom/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  TestWidgetsFlutterBinding.ensureInitialized();
+  GoogleFonts.config.allowRuntimeFetching = false;
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+  testWidgets('Teacher demo flow reaches dashboard and AI', (tester) async {
+    await tester.pumpWidget(const BloomApp());
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Bloom'), findsWidgets);
+    expect(find.text('Teacher Mode'), findsOneWidget);
+    expect(find.text('Parent Mode'), findsOneWidget);
+
+    await tester.ensureVisible(find.text('Teacher Mode'));
+    await tester.tap(find.text('Teacher Mode'));
+    await tester.pumpAndSettle();
+
+    expect(find.textContaining('Teacher Namuli'), findsOneWidget);
+    expect(find.text('Understanding Your Cycle'), findsOneWidget);
+
+    await tester.tap(find.text('AI Assist'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('AI Co-Pilot'), findsOneWidget);
+    expect(
+      find.text('How do I explain menstruation simply to my class?'),
+      findsOneWidget,
+    );
   });
 }
