@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bloom - Teacher Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Noto+Serif:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#884d5e",
+                        "surface-container-low": "#fdf1f2",
+                        "outline-variant": "#d5c2c6",
+                        "surface-tint": "#864e60",
+                        "on-tertiary-fixed-variant": "#2a4f2b",
+                        "secondary-container": "#fdb2c5",
+                        "outline": "#837377",
+                        "secondary-fixed-dim": "#fdb2c5",
+                        "tertiary": "#052b0b",
+                        "primary": "#411525",
+                        "inverse-on-surface": "#faeeef",
+                        "on-primary-container": "#d491a5",
+                        "primary-container": "#5b2a3b",
+                        "on-tertiary-container": "#85ad82",
+                        "primary-fixed-dim": "#fab3c7",
+                        "surface-container": "#f7ebec",
+                        "on-surface": "#201a1b",
+                        "on-primary-fixed-variant": "#6a3748",
+                        "on-secondary-fixed": "#370b1b",
+                        "inverse-surface": "#352f30",
+                        "surface-container-highest": "#ebe0e1",
+                        "tertiary-fixed-dim": "#a7d1a3",
+                        "on-background": "#201a1b",
+                        "on-tertiary-fixed": "#002105",
+                        "on-surface-variant": "#514347",
+                        "on-secondary-container": "#7a4152",
+                        "tertiary-container": "#1d411f",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#360c1d",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#ebe0e1",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#6c3646",
+                        "background": "#fff8f8",
+                        "inverse-primary": "#fab3c7",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#c3eebd",
+                        "surface-dim": "#e3d7d9",
+                        "on-error": "#ffffff",
+                        "surface": "#fff8f8",
+                        "primary-fixed": "#ffd9e2",
+                        "surface-bright": "#fff8f8",
+                        "surface-container-high": "#f1e5e7",
+                        "secondary-fixed": "#ffd9e1",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "20px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "gutter": "12px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Be Vietnam Pro"],
+                        "body-sm": ["Be Vietnam Pro"],
+                        "display-lg": ["Noto Serif"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "display-lg-mobile": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "headline-sm": ["Noto Serif"],
+                        "label-sm": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Ambient Tonal Shadow for Cards (Level 1) */
+        .card-shadow {
+            box-shadow: 0 4px 12px rgba(91, 42, 59, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row antialiased">
+<!-- SideNavBar (Desktop Only) -->
+<nav class="hidden md:flex flex-col h-screen sticky left-0 top-0 w-64 bg-surface-container-low dark:bg-surface-container-lowest border-r border-surface-variant/50">
+<div class="px-container-margin py-lg border-b border-surface-variant/30">
+<h1 class="font-display-lg text-primary">Bloom</h1>
+<p class="font-body-sm text-on-surface-variant">Uganda Education</p>
+</div>
+<div class="flex flex-col py-lg gap-sm px-2 flex-grow">
+<!-- Active: Dashboard -->
+<a class="flex items-center gap-md bg-primary text-on-primary rounded-xl px-4 py-3 mx-2 transition-all duration-200 ease-out group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-md text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all duration-200 ease-out rounded-xl group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">school</span>
+<span class="font-label-md group-hover:text-primary transition-colors">Learning</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all duration-200 ease-out rounded-xl group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">psychology</span>
+<span class="font-label-md group-hover:text-primary transition-colors">AI Tutor</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all duration-200 ease-out rounded-xl group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">library_books</span>
+<span class="font-label-md group-hover:text-primary transition-colors">Resources</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all duration-200 ease-out rounded-xl group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">groups</span>
+<span class="font-label-md group-hover:text-primary transition-colors">Community</span>
+</a>
+</div>
+<div class="mt-auto p-4 border-t border-surface-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary font-bold overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A portrait photo of a Ugandan teacher smiling warmly in a classroom setting, illuminated by soft natural light. She wears a professional collared shirt. The background is slightly blurred showing educational posters. Shot with a slight depth of field, warm and inviting atmosphere, professional photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC48_Nm2fRlVmk4o6wMStTXkra-lnB4Ev-POXVxVwibxa9Lw6ICkFVeZ491etQ1lVrtdqA95Qg2Hj_zrOkSivA_WzrEk1xYzGCGtMtK-qiNm2luDBywTgYWn2p6ZcRwryhKwwb3aMZslk3w27rCTm67dD69Blv_ympdcScuIj1jZEVguBQH8IQwlZ3mYHfzlCzPe_hNfyvzOgP2D2fKEOJd6MLz111KGvXUjmuC1oNZNzvDuDlnNeeK"/>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Namuli</p>
+<p class="font-label-sm text-on-surface-variant">Facilitator</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-grow flex flex-col min-h-screen">
+<!-- Mobile Top Nav (Hidden on Desktop) -->
+<header class="md:hidden w-full sticky top-0 z-50 bg-surface dark:bg-surface-container-low shadow-sm shadow-primary/5">
+<div class="flex justify-between items-center px-container-margin py-md w-full">
+<h1 class="font-display-lg-mobile text-primary font-bold">Bloom</h1>
+<div class="flex gap-4 text-primary">
+<button aria-label="Sync Status"><span class="material-symbols-outlined">sync</span></button>
+<button aria-label="Language"><span class="material-symbols-outlined">language</span></button>
+</div>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex-grow p-container-margin md:p-lg lg:p-xl max-w-[1600px] mx-auto w-full">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-lg md:mb-xl gap-4">
+<div>
+<h2 class="font-display-lg text-on-surface">Hi, Teacher Namuli 👋</h2>
+<p class="font-body-lg text-on-surface-variant mt-2">Here is your teaching overview for today.</p>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full border border-surface-variant/50 self-start md:self-auto">
+<span class="material-symbols-outlined text-tertiary-container animate-pulse text-[20px]" style="font-variation-settings: 'FILL' 1;">cloud_done</span>
+<span class="font-label-sm text-on-surface-variant">Last synced: 2m ago</span>
+</div>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Center Column: Feed (Cols 1-8 on large screens) -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<!-- Active Module Card (Bento Style) -->
+<section class="bg-surface rounded-xl p-md md:p-lg card-shadow border border-surface-variant/20 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110 duration-500"></div>
+<div class="flex flex-col md:flex-row gap-lg items-start md:items-center relative z-10">
+<div class="w-full md:w-1/3 aspect-video md:aspect-square rounded-lg overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="A stylized, warm, and inviting illustration of students reading under a large Baobab tree. The style is modern editorial, flat vector graphics with organic shapes, using earthy tones of plum, cream, and soft greens. Soft dappled lighting effect, peaceful and educational mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSCwFP68JrBwrbpV3K1ZWbkNHxPLl-Il3j04HXnUqFEyGdc-0BP3DEJnDaeiEz8LYlz9cP8JKke4fxzALHYbOE1krnggVS7w3MhfXxf4HpwnYD4KzS77m2uhUuGFjX9kBEep01UKh5qRGpbX_l_w3oZJPF-NDSfy3AizMMK_WDgBH1XCktuU3WRyRRIgdVYf7h16Vi8HEX9-iZSyPP4bEOStIaUhuUUE984UfO7hrqRLZOSyi7Qq8i"/>
+<div class="absolute bottom-2 left-2 bg-surface/90 backdrop-blur-sm px-2 py-1 rounded-md text-xs font-label-sm text-primary">Module 4</div>
+</div>
+<div class="w-full md:w-2/3 flex flex-col">
+<span class="font-label-sm text-secondary uppercase tracking-wider mb-1">Active Now</span>
+<h3 class="font-headline-md text-on-surface mb-2">Early Grade Reading Strategies</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Focusing on phonemic awareness and interactive read-aloud techniques for Primary 2 and 3.</p>
+<div class="flex flex-col sm:flex-row items-center gap-4 mt-auto w-full">
+<div class="flex-grow w-full">
+<div class="flex justify-between font-label-sm text-on-surface-variant mb-1">
+<span>Progress</span>
+<span>65%</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+<button class="w-full sm:w-auto bg-primary text-on-primary font-label-md px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors whitespace-nowrap">
+                                        Continue Module
+                                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Today's Lesson List -->
+<section>
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-headline-sm text-on-surface">Today's Schedule</h3>
+<button class="text-primary font-label-md hover:underline">View Week</button>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Lesson Item 1 -->
+<div class="bg-surface rounded-lg p-md card-shadow border border-surface-variant/20 flex gap-4 items-start group hover:border-primary/30 transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-label-md text-on-surface text-base">Literacy Block: Phonics</h4>
+<span class="font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">08:00 AM</span>
+</div>
+<p class="font-body-sm text-on-surface-variant">Primary 2 • Classroom A</p>
+</div>
+</div>
+<!-- Lesson Item 2 -->
+<div class="bg-surface rounded-lg p-md card-shadow border border-surface-variant/20 flex gap-4 items-start group hover:border-primary/30 transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined">science</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-label-md text-on-surface text-base">Environmental Studies</h4>
+<span class="font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">10:30 AM</span>
+</div>
+<p class="font-body-sm text-on-surface-variant">Primary 3 • Outdoor Garden</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Quick Actions (Cols 9-12 on large screens) -->
+<aside class="lg:col-span-4 flex flex-col gap-lg">
+<!-- Quick Actions Grid -->
+<section class="bg-surface rounded-xl p-md md:p-lg card-shadow border border-surface-variant/20">
+<h3 class="font-headline-sm text-on-surface mb-4">Quick Actions</h3>
+<div class="grid grid-cols-2 gap-sm">
+<button class="flex flex-col items-center justify-center gap-2 bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface p-4 rounded-lg transition-colors group h-24">
+<span class="material-symbols-outlined text-[28px] text-primary group-hover:text-on-primary-container transition-colors">play_circle</span>
+<span class="font-label-sm text-center leading-tight">Start Session</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface p-4 rounded-lg transition-colors group h-24 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent pointer-events-none"></div>
+<span class="material-symbols-outlined text-[28px] text-primary group-hover:text-on-primary-container transition-colors relative z-10">smart_toy</span>
+<span class="font-label-sm text-center leading-tight relative z-10">Ask AI</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 bg-surface-container hover:bg-surface-variant text-on-surface p-4 rounded-lg transition-colors h-24">
+<span class="material-symbols-outlined text-[28px] text-on-surface-variant">group_add</span>
+<span class="font-label-sm text-center leading-tight">Referral</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 bg-surface-container hover:bg-surface-variant text-on-surface p-4 rounded-lg transition-colors h-24">
+<span class="material-symbols-outlined text-[28px] text-on-surface-variant">bar_chart</span>
+<span class="font-label-sm text-center leading-tight">Report</span>
+</button>
+</div>
+</section>
+<!-- Notice Board / Mini Stats -->
+<section class="bg-secondary-container/30 rounded-xl p-md md:p-lg border border-secondary-container/50">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary">campaign</span>
+<div>
+<h4 class="font-label-md text-on-surface mb-1">Upcoming Assessment</h4>
+<p class="font-body-sm text-on-surface-variant mb-3">End of term reading assessments begin next Tuesday. Ensure all student profiles are updated.</p>
+<button class="font-label-sm text-primary hover:underline uppercase tracking-wide">Review Guidelines</button>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-auto bg-surface-container-highest dark:bg-surface-dim py-sm px-container-margin w-full hidden md:flex justify-between items-center z-10 relative">
+<p class="font-label-sm text-on-surface-variant dark:text-surface-variant">© 2024 Bloom Uganda</p>
+<div class="flex gap-4">
+<a class="font-label-sm text-on-surface-variant dark:text-surface-variant hover:underline opacity-90" href="#">Offline Status: Syncing...</a>
+<a class="font-label-sm text-on-surface-variant dark:text-surface-variant hover:underline opacity-90" href="#">Help Center</a>
+<a class="font-label-sm text-on-surface-variant dark:text-surface-variant hover:underline opacity-90" href="#">Privacy</a>
+</div>
+</footer>
+<!-- Mobile Bottom Nav (Hidden on Desktop) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container dark:bg-surface-container-highest shadow-[0_-4px_12px_rgba(91,42,59,0.08)]">
+<div class="flex justify-around items-center h-14 pb-safe px-4">
+<!-- Active -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-[10px]">Home</span>
+</a>
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-variant transition-all duration-200 ease-in-out px-2 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span class="font-label-sm text-[10px]">Modules</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-variant transition-all duration-200 ease-in-out px-2 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+<span class="font-label-sm text-[10px]">AI Assist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-variant transition-all duration-200 ease-in-out px-2 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-label-sm text-[10px]">Settings</span>
+</a>
+</div>
+</nav>
+<!-- iOS Safe Area Padding -->
+<div class="h-6 w-full bg-surface-container dark:bg-surface-container-highest md:hidden block fixed bottom-0 -z-10"></div>
+</div>
+</body></html>

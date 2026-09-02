@@ -1,0 +1,277 @@
+  WOMEN SAFETY & SURVEILLANCE TRACK
+
+
+
+
+BLOOM
+Helping trusted adults learn, communicate, and guide girls through
+puberty and safety.
+
+TEAM BLOOM
+                                              Empowering Communities
+Christine Namatovu · Shakiran Nannyombi
+ TARGET DOMAIN & PROBLEM
+
+
+
+
+Puberty is not only difficult for girls.
+Many adults don't know how to talk about it either.
+
+
+ 1 in 10
+                                             Root Causes of Communication
+                                                        Barrier
+                                             Parents & Guardians
+ young girls in sub-sharan Africa, puberty   Grew up in environments where these conversations were surrounded by silence, shame, or
+ brings overwhelming questions about         deep discomfort.
+ body changes, menstruation, personal        Teachers
+ boundaries, safety, and asking for help.
+                                             Often lack the formal training and confidence to answer sensitive questions when students
+Uganda: puberty & reproductive-health
+                                             approach them.
+teaching in schools remains patchy and       The Result
+rarely reaches rural areas.
+                                             Girls are left without a single trusted adult they feel comfortable turning to during crucial
+                                             developmental years.
+
+                                                                                                                                             02
+The Communication Gap
+The core issue is not just a lack of information, it is a lack of confident, safe conversations.
+
+
+
+
+               Girls                                  Parents                                 Teachers
+   Struggle to ask questions due to         Struggle to explain topics they             Struggle to respond without
+    shame or fear of disapproval.          were never taught how to discuss.         standardized guidance or scripts.
+
+
+
+
+  "How do I even start this conversation with my child?"
+   A concerned parent wanting to help but feeling unprepared
+
+                                                   "How do I handle sensitive questions from my students?"
+                                                         A teacher facing unexpected puberty and safety inquiries
+Why This Matters
+
+When trusted adults cannot communicate, girls look elsewhere for guidance. This creates critical risks:
+
+
+      Unreliable Information                                       Shame and Silence
+  Girls depend on uninformed peers or unsafe online sources   Important questions about body changes remain
+  for answers to sensitive health questions.                  completely unanswered, creating long-term anxiety.
+
+
+
+
+     Missed Safety Dialogues                                      Isolation in Crisis
+  Girls may fail to understand personal boundaries, body      Girls facing abuse or difficult situations feel isolated and do
+  autonomy, or how to recognize grooming.                     not know which adult to approach for help.
+Our Solution
+
+
+ An AI-powered companion that equips trusted adults first.
+ Bloom provides the knowledge, language, and structured guidance needed to have conversations that many adults were
+ never taught how to initiate.
+
+
+
+
+ Teachers                                  Parents & Guardians                        Community Facilitators
+ Equipped with ready-made lesson           Supported with private pre-learning        Provided with standardized scripts
+ modules and classroom session             modules and home conversation              to lead local outreach groups
+ guides.                                   starters.                                  confidently.
+The Bloom Journey
+A structured four-step methodology ensuring adult confidence before interaction:
+
+
+
+                                          2. Prepare                                                      4. Support
+                                       Bloom provides simple                                         Bloom helps adults handle
+                                  explanations, lesson plans, and                                   hard questions and connect
+                                   tailored conversation guides.                                       girls to vetted support.
+
+
+
+
+           1. Learn                                                           3. Talk
+   Adults privately learn about                                     Teachers lead group sessions;
+    puberty, safety, and body                                        parents conduct guided one-
+  autonomy before discussing.                                           on-one chats at home.
+Two Main User Journeys
+
+             Teacher Journey                               Parent/Gurdian Journey
+                                                     Learn → Understand → Start Conversation →
+ Learn → Prepare → Teach → Ask AI → Support
+                                                     Guide → Support
+
+    Access ready-made structured lessons                Learn privately before speaking to their child
+    Use talking points during classroom sessions        Understand physical & emotional body changes
+    Ask Bloom AI live, sensitive questions              Get practical conversation starters
+    Receive private, real-time guidance                 Explain difficult topics simply without shame
+    Refer girls needing additional help to mentors      Ask Bloom AI questions without judgment
+Learn Before You Talk
+Many parents want to help they just don't know how to begin. Bloom equips parents & guardians with:
+
+
+
+
+   Simple Modules                                  Conversation Starters                                  Common Questions
+   Understand puberty, menstruation, and           Simple, natural prompts to begin difficult             Prepares adults with simple answers to
+   safety topics privately before discussing       conversations smoothly at home.                        unexpected questions children ask.
+   them.
+
+
+
+
+   Language Support                                AI Parenting Guide
+   Complete culturally-adapted guidance            Provides private, judgment-free support for delicate questions, helping adults formulate empathetic
+   available in both English and Luganda.          responses.
+The Bloom Toolkit
+One unified toolkit delivering specialized guidance for different settings:
+
+
+
+
+  Facilitator Toolkit                           AI Co-Pilot                                     Conversation Guidance
+  Ready-made lessons & talking points           Live, judgment-free answers to                  Step-by-step guidance helping parents
+  for teachers and community                    complex questions raised during                 know exactly what to say.
+  facilitators.                                 sessions.
+
+
+
+         Mentor Referral                                                          Safe Reporting
+         Connects girls needing additional support directly                       Private guidance for trusted adults responding to
+         with vetted near-peer mentors.                                           safety concerns or reporting risks.
+How The AI Helps
+
+ Bloom AI strengthens adults it never replaces them.
+
+  Teacher asks: "How do I explain menstruation simply to my class?"
+
+
+  Parent asks: "How do I start a conversation about body
+  safety with my daughter?"
+
+
+
+  Simple Explanations: Clear, non-technical language
+
+  Age-Appropriate: Tailored to the girl's growth stage
+
+  Bilingual Support: Live guidance in English & Luganda
+Safety By Design
+Some conversations need more than information. Every sensitive query is handled with safety as the priority.
+
+
+
+
+   1. Private Guidance                              2. Vetted Mentors                                3. Escalation Pathways
+   Bloom provides private advice and response       The adult can connect the girl to a vetted       Serious safety concerns route to professional
+   scripts directly to the trusted adult, not the   near-peer mentor for ongoing 1-on-1              counsellors and approved support hotlines.
+   child.                                           guidance.
+Wireframes (Mobile View)
+The application dynamically adapts based on whether the active user is a teacher or a parent/guardian:
+
+General page(Parent/Teacher)
+Execution Flow
+Transforming uncertain adults into confident guides through 5 seamless
+steps:
+
+
+
+                                    2. Learn                                             4. Get AI Support
+                             Privately understands topic                                 Bloom answers hard or
+                             before teaching or talking.                                  unexpected queries.
+
+
+
+
+      1. Onboard                                                  3. Guide                                           5. Follow Up
+   Adult learns how to use                                 Uses lesson plans, scripts,                           Connects girl to mentors or
+  Bloom and manage topics.                                       and prompts.                                        crisis pathways.
+System Architecture
+Built for reliability: One shared device · Multiple trusted adults · AI-guided support
+
+
+  Facilitator Layer (Mobile App)
+  Flutter mobile app on shared device per school/household · Offline content caching · Lesson booklets & conversation scripts
+
+
+
+  API & Logic Layer
+  Node.js / Express REST API · Automated mentor-matching engine · User management & referral workflow handling
+
+
+
+  AI Layer
+  Safety-tuned AI model · Learning support & conversation guidance · Live Q&A & Luganda/English translation
+
+
+
+  Data Layer
+  PostgreSQL for user records & mentor databases · Firebase real-time sync · End-to-end encrypted storage
+Why Bloom Is Different
+
+We are not building another app that simply
+gives girls information.
+We are strengthening the adults around them.
+
+Bloom focuses directly on the adults girls already know and trust:
+
+    Parents & Guardians at home
+
+    Teachers in schools
+
+    Trusted Community Leaders
+
+
+  Because sometimes the biggest barrier is not access to information, it
+  is having someone confident enough to start the conversation.
+Real World Impact
+Designed for real community adoption, not just app download counts:
+
+
+
+
+  Equity by Design                                               Parents Included
+  One shared device supports an entire school grade,             Extends reach beyond the school classroom directly into
+  household, or community group without requiring individual     domestic homes, breaking generational silence.
+  smartphones.
+
+
+
+
+  Language & Culture                                             Offline Support
+  Fully adapted for local cultural norms and regional            Learning modules and cached guides remain accessible even
+  languages, offering full English and Luganda support.          in remote areas with zero internet connectivity.
+Pilot & Scale
+A structured deployment approach: Start local · Learn · Improve
+· Scale
+
+
+
+  Pilot                                    Measure                             Expand
+  Train teachers and parents in            Track sessions completed, parents   Build a wider network of partner
+  selected pilot schools and               trained, questions raised, and      schools, parents, mentors, and local
+  communities in Mbarara.                  referrals handled safely.           NGOs (UNFPA Uganda).
+
+
+
+
+   LONG-TERM VISION
+
+   Mbarara Pilot → Uganda National Network → East Africa
+  "Every girl deserves more than information. She
+deserves trusted adults who are informed, confident,
+                 and ready to listen."
+
+                       BLOOM
+              LEARN · TALK · GUIDE · SUPPORT
+
+
+                  Women Safety & Surveillance Track
+       Team Bloom: Christine Namatovu · Shakiran Nannyombi
+

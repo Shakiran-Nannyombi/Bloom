@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Learn Before You Talk - Body Autonomy</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Noto+Serif:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#884d5e",
+                    "surface-container-low": "#fdf1f2",
+                    "outline-variant": "#d5c2c6",
+                    "surface-tint": "#864e60",
+                    "on-tertiary-fixed-variant": "#2a4f2b",
+                    "secondary-container": "#fdb2c5",
+                    "outline": "#837377",
+                    "secondary-fixed-dim": "#fdb2c5",
+                    "tertiary": "#052b0b",
+                    "primary": "#411525",
+                    "inverse-on-surface": "#faeeef",
+                    "on-primary-container": "#d491a5",
+                    "primary-container": "#5b2a3b",
+                    "on-tertiary-container": "#85ad82",
+                    "primary-fixed-dim": "#fab3c7",
+                    "surface-container": "#f7ebec",
+                    "on-surface": "#201a1b",
+                    "on-primary-fixed-variant": "#6a3748",
+                    "on-secondary-fixed": "#370b1b",
+                    "inverse-surface": "#352f30",
+                    "surface-container-highest": "#ebe0e1",
+                    "tertiary-fixed-dim": "#a7d1a3",
+                    "on-background": "#201a1b",
+                    "on-tertiary-fixed": "#002105",
+                    "on-surface-variant": "#514347",
+                    "on-secondary-container": "#7a4152",
+                    "tertiary-container": "#1d411f",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#360c1d",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#ebe0e1",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#6c3646",
+                    "background": "#fff8f8",
+                    "inverse-primary": "#fab3c7",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#c3eebd",
+                    "surface-dim": "#e3d7d9",
+                    "on-error": "#ffffff",
+                    "surface": "#fff8f8",
+                    "primary-fixed": "#ffd9e2",
+                    "surface-bright": "#fff8f8",
+                    "surface-container-high": "#f1e5e7",
+                    "secondary-fixed": "#ffd9e1",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-margin": "20px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "unit": "4px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "gutter": "12px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "label-md": [
+                            "Be Vietnam Pro"
+                    ],
+                    "body-sm": [
+                            "Be Vietnam Pro"
+                    ],
+                    "display-lg": [
+                            "Noto Serif"
+                    ],
+                    "body-md": [
+                            "Be Vietnam Pro"
+                    ],
+                    "display-lg-mobile": [
+                            "Noto Serif"
+                    ],
+                    "headline-md": [
+                            "Noto Serif"
+                    ],
+                    "body-lg": [
+                            "Be Vietnam Pro"
+                    ],
+                    "headline-sm": [
+                            "Noto Serif"
+                    ],
+                    "label-sm": [
+                            "Be Vietnam Pro"
+                    ]
+            },
+            "fontSize": {
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "36px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "34px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom scrollbar for horizontal tabs */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased pb-24 md:pb-0">
+<!-- Top Navigation (Mobile App Style Header) -->
+<header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md px-container-margin py-md flex items-center justify-between border-b border-surface-variant md:hidden shadow-sm shadow-primary/5">
+<button aria-label="Go Back" class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-150 p-2 -ml-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm-mobile text-primary text-center truncate px-2">Body Autonomy &amp; Boundaries</h1>
+<button aria-label="Switch Language" class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-150 p-2 -mr-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col max-w-md mx-auto w-full md:mt-md">
+<!-- Hero/Intro Section -->
+<section class="px-container-margin py-lg flex flex-col gap-sm">
+<div class="inline-flex items-center gap-xs text-secondary font-label-sm text-label-sm uppercase tracking-wider mb-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="menu_book">menu_book</span>
+<span>Learn Before You Talk</span>
+</div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary leading-tight">Body Autonomy &amp; Boundaries</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm">Prepare yourself with key concepts before initiating this important conversation with youth.</p>
+</section>
+<!-- Tabbed Interface -->
+<div class="sticky top-[68px] z-40 bg-surface/95 backdrop-blur-sm px-container-margin border-b border-surface-variant md:relative md:top-0">
+<nav aria-label="Module sections" class="flex gap-lg overflow-x-auto no-scrollbar py-sm">
+<button class="font-label-md text-label-md whitespace-nowrap text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 transition-all">What to Know</button>
+<button class="font-label-md text-label-md whitespace-nowrap text-on-surface-variant hover:text-secondary border-b-2 border-transparent pb-1 active:scale-95 transition-all">Common Questions</button>
+<button class="font-label-md text-label-md whitespace-nowrap text-on-surface-variant hover:text-secondary border-b-2 border-transparent pb-1 active:scale-95 transition-all">Conversation Starters</button>
+</nav>
+</div>
+<!-- Tab Content: What to Know -->
+<section class="px-container-margin py-lg flex flex-col gap-lg" id="tab-what-to-know">
+<!-- Key Fact Cards (Bento Style) -->
+<div class="grid grid-cols-1 gap-md">
+<!-- Fact Card 1 -->
+<div class="bg-surface-container-low rounded-xl p-md border border-outline-variant/30 flex gap-md items-start shadow-sm shadow-primary/5">
+<div class="bg-primary-container text-on-primary-container p-sm rounded-lg shrink-0">
+<span class="material-symbols-outlined" data-icon="pan_tool">pan_tool</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm-mobile text-on-surface mb-xs">Definition</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Body autonomy means a person has the right to govern their own body. It teaches youth they are in charge of who touches them and how.</p>
+</div>
+</div>
+<!-- Fact Card 2 -->
+<div class="bg-surface-container-low rounded-xl p-md border border-outline-variant/30 flex gap-md items-start shadow-sm shadow-primary/5">
+<div class="bg-secondary-container text-on-secondary-container p-sm rounded-lg shrink-0">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm-mobile text-on-surface mb-xs">Why It Matters</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Establishing boundaries early helps protect youth from abuse and empowers them to communicate discomfort confidently.</p>
+</div>
+</div>
+</div>
+<!-- Accordion: Anticipated Questions -->
+<div class="mt-md">
+<h3 class="font-label-md text-label-md text-secondary uppercase tracking-wider mb-md">Anticipated Questions from Youth</h3>
+<div class="flex flex-col gap-sm">
+<!-- Accordion Item 1 -->
+<details class="group bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between p-md cursor-pointer list-none font-body-md text-body-md font-medium text-on-surface hover:bg-surface-container-low transition-colors">
+<span>"What if an adult I know wants to hug me?"</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:-rotate-180 text-outline" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-md pt-0 text-on-surface-variant font-body-sm text-body-sm bg-surface-container-lowest">
+<p class="pb-sm border-t border-outline-variant/20 pt-sm mt-xs">Guide them to understand that they can say "no" even to family members. Suggest alternatives like high-fives or waving if they prefer not to hug.</p>
+</div>
+</details>
+<!-- Accordion Item 2 -->
+<details class="group bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between p-md cursor-pointer list-none font-body-md text-body-md font-medium text-on-surface hover:bg-surface-container-low transition-colors">
+<span>"Is it rude to say no?"</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:-rotate-180 text-outline" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-md pt-0 text-on-surface-variant font-body-sm text-body-sm bg-surface-container-lowest">
+<p class="pb-sm border-t border-outline-variant/20 pt-sm mt-xs">Reassure them that setting a boundary is never rude; it is a healthy way to respect their own comfort levels.</p>
+</div>
+</details>
+</div>
+</div>
+<!-- Action Button -->
+<div class="mt-lg mb-xl w-full">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md rounded-[16px] py-[16px] flex justify-center items-center gap-sm active:scale-95 transition-transform shadow-sm shadow-primary/20">
+<span>Mark as Reviewed</span>
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) - Shared Component -->
+<nav class="fixed bottom-0 w-full z-50 md:hidden bg-surface-container dark:bg-surface-container-highest shadow-[0_-4px_12px_rgba(91,42,59,0.08)] flex justify-around items-center h-14 pb-safe px-4">
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-variant transition-all duration-200 ease-in-out p-1 rounded-lg">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:bg-surface-variant transition-all duration-200 ease-in-out">
+<span class="material-symbols-outlined text-[24px]" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm mt-1">Modules</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-variant transition-all duration-200 ease-in-out p-1 rounded-lg">
+<span class="material-symbols-outlined text-[24px]" data-icon="smart_toy">smart_toy</span>
+<span class="font-label-sm text-label-sm mt-1">AI Assist</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-variant transition-all duration-200 ease-in-out p-1 rounded-lg">
+<span class="material-symbols-outlined text-[24px]" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm mt-1">Settings</span>
+</button>
+</nav>
+</body></html>

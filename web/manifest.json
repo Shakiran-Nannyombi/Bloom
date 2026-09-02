@@ -1,11 +1,11 @@
 {
-    "name": "bloom",
-    "short_name": "bloom",
+    "name": "Bloom",
+    "short_name": "Bloom",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Toolkit for trusted adults guiding girls through puberty and safety.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
