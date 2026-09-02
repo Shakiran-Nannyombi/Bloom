@@ -48,82 +48,78 @@ class RoleSelectorScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                  if (wide)
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(child: _HeroCopy(strings: s)),
-                        const SizedBox(width: 48),
-                        Expanded(
-                          child: Column(
-                            children: [
-                              _ModeCard(
-                                icon: Icons.school,
-                                iconBg: BloomColors.primaryContainer,
-                                iconColor: BloomColors.onPrimaryContainer,
-                                title: s.teacherMode,
-                                features: [
-                                  s.teacherFeat1,
-                                  s.teacherFeat2,
-                                  s.teacherFeat3,
-                                ],
-                                cta: s.enterMode,
-                                onEnter: () {
-                                  state.selectRole(UserRole.teacher);
-                                  context.go('/home');
-                                },
-                              ),
-                              const SizedBox(height: 16),
-                              _ModeCard(
-                                icon: Icons.family_restroom,
-                                iconBg: BloomColors.secondaryContainer,
-                                iconColor: BloomColors.onSecondaryContainer,
-                                title: s.parentMode,
-                                features: [
-                                  s.parentFeat1,
-                                  s.parentFeat2,
-                                  s.parentFeat3,
-                                ],
-                                cta: s.enterMode,
-                                onEnter: () {
-                                  state.selectRole(UserRole.parent);
-                                  context.go('/home');
-                                },
-                              ),
-                            ],
+                    _HeroBanner(strings: s, wide: wide),
+                    const SizedBox(height: 28),
+                    if (wide)
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: _ModeCard(
+                              icon: Icons.school,
+                              iconBg: BloomColors.primaryContainer,
+                              iconColor: BloomColors.onPrimaryContainer,
+                              title: s.teacherMode,
+                              features: [
+                                s.teacherFeat1,
+                                s.teacherFeat2,
+                                s.teacherFeat3,
+                              ],
+                              cta: s.enterMode,
+                              onEnter: () {
+                                state.selectRole(UserRole.teacher);
+                                context.go('/home');
+                              },
+                            ),
                           ),
-                        ),
-                      ],
-                    )
-                  else ...[
-                    _HeroCopy(strings: s),
-                    const SizedBox(height: 24),
-                    _ModeCard(
-                      icon: Icons.school,
-                      iconBg: BloomColors.primaryContainer,
-                      iconColor: BloomColors.onPrimaryContainer,
-                      title: s.teacherMode,
-                      features: [s.teacherFeat1, s.teacherFeat2, s.teacherFeat3],
-                      cta: s.enterMode,
-                      onEnter: () {
-                        state.selectRole(UserRole.teacher);
-                        context.go('/home');
-                      },
-                    ),
-                    const SizedBox(height: 16),
-                    _ModeCard(
-                      icon: Icons.family_restroom,
-                      iconBg: BloomColors.secondaryContainer,
-                      iconColor: BloomColors.onSecondaryContainer,
-                      title: s.parentMode,
-                      features: [s.parentFeat1, s.parentFeat2, s.parentFeat3],
-                      cta: s.enterMode,
-                      onEnter: () {
-                        state.selectRole(UserRole.parent);
-                        context.go('/home');
-                      },
-                    ),
-                  ],
+                          const SizedBox(width: 16),
+                          Expanded(
+                            child: _ModeCard(
+                              icon: Icons.family_restroom,
+                              iconBg: BloomColors.secondaryContainer,
+                              iconColor: BloomColors.onSecondaryContainer,
+                              title: s.parentMode,
+                              features: [
+                                s.parentFeat1,
+                                s.parentFeat2,
+                                s.parentFeat3,
+                              ],
+                              cta: s.enterMode,
+                              onEnter: () {
+                                state.selectRole(UserRole.parent);
+                                context.go('/home');
+                              },
+                            ),
+                          ),
+                        ],
+                      )
+                    else ...[
+                      _ModeCard(
+                        icon: Icons.school,
+                        iconBg: BloomColors.primaryContainer,
+                        iconColor: BloomColors.onPrimaryContainer,
+                        title: s.teacherMode,
+                        features: [s.teacherFeat1, s.teacherFeat2, s.teacherFeat3],
+                        cta: s.enterMode,
+                        onEnter: () {
+                          state.selectRole(UserRole.teacher);
+                          context.go('/home');
+                        },
+                      ),
+                      const SizedBox(height: 16),
+                      _ModeCard(
+                        icon: Icons.family_restroom,
+                        iconBg: BloomColors.secondaryContainer,
+                        iconColor: BloomColors.onSecondaryContainer,
+                        title: s.parentMode,
+                        features: [s.parentFeat1, s.parentFeat2, s.parentFeat3],
+                        cta: s.enterMode,
+                        onEnter: () {
+                          state.selectRole(UserRole.parent);
+                          context.go('/home');
+                        },
+                      ),
+                    ],
                   const SizedBox(height: 32),
                   Row(
                     children: [
@@ -148,6 +144,80 @@ class RoleSelectorScreen extends StatelessWidget {
           ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _HeroBanner extends StatelessWidget {
+  const _HeroBanner({required this.strings, required this.wide});
+
+  final BloomStrings strings;
+  final bool wide;
+
+  @override
+  Widget build(BuildContext context) {
+    final image = ClipRRect(
+      borderRadius: BorderRadius.circular(24),
+      child: Image.asset(
+        'assets/images/hero.png',
+        fit: BoxFit.cover,
+        alignment: Alignment.centerLeft,
+        height: wide ? 420 : 220,
+        width: double.infinity,
+      ),
+    );
+
+    if (!wide) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          image,
+          const SizedBox(height: 20),
+          _HeroCopy(strings: strings),
+        ],
+      );
+    }
+
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(24),
+      child: SizedBox(
+        height: 420,
+        width: double.infinity,
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            Image.asset(
+              'assets/images/hero.png',
+              fit: BoxFit.cover,
+              alignment: Alignment.centerLeft,
+            ),
+            DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [
+                    Colors.transparent,
+                    BloomColors.card.withValues(alpha: 0.55),
+                    BloomColors.card.withValues(alpha: 0.96),
+                  ],
+                  stops: const [0.38, 0.62, 0.82],
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(24, 32, 40, 32),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 440),
+                  child: _HeroCopy(strings: strings),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

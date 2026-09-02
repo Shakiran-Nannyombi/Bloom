@@ -15,6 +15,7 @@ void main() {
     expect(find.text('Teacher Mode'), findsOneWidget);
     expect(find.text('Parent Mode'), findsOneWidget);
 
+    await tester.ensureVisible(find.text('Teacher Mode'));
     await tester.tap(find.text('Teacher Mode'));
     await tester.pumpAndSettle();
 
